@@ -167,7 +167,7 @@ header {
   right: 20px;
 }
 
-laranja, maca, pickle, marmita, prato {
+laranja, maca, picles, marmita, prato {
   transition: transform ease-out .2s;
 }
 
@@ -385,7 +385,7 @@ laranja {
   border-color: #bd6e07;
 }
 
-laranja,maca,pickle {
+laranja,maca,picles {
   box-shadow: 0px 5px 0px rgba(0,0,0,.2);
   display: inline-block;
   margin: 0 10px;
@@ -422,15 +422,15 @@ laranja,maca {
   margin: 20px 10px;
 }
 
-laranja.small,
-maca.small {
+laranja.pequeno,
+maca.pequeno {
   height: 30px;
   width: 30px;
   border-width: 2px 4px 8px 4px;
   margin: 30px 10px;
 }
 
-pickle {
+picles {
   background: #179837;
   width: 25px;
   border-radius: 30px;
@@ -441,7 +441,7 @@ pickle {
   margin: 20px 10px;
 }
 
-pickle.small {
+picles.pequeno {
   height: 40px;
   width: 18px;
   border-width: 1px 2px 6px 2px;
@@ -480,22 +480,22 @@ marmita > laranja:last-child
   top: calc(50% - 35px);
 }
 
-prato .small,
-marmita .small {
+prato .pequeno,
+marmita .pequeno {
   left: calc(50% - 15px);
   margin-left:0;
   margin-right:0;
 }
 
-prato > .small:only-child,
-marmita > .small:only-child {
+prato > .pequeno:only-child,
+marmita > .pequeno:only-child {
   position: absolute;
   top: calc(50% - 15px);
   margin:0;
 }
 
-prato > pickle:only-child,
-marmita > pickle:only-child {
+prato > picles:only-child,
+marmita > picles:only-child {
   top: calc(50% - 40px);
   left: calc(50% - 10px);
   z-index: 99999;
@@ -503,8 +503,8 @@ marmita > pickle:only-child {
   position: absolute;
 }
 
-prato > pickle.small:only-child,
-marmita > pickle.small:only-child {
+prato > picles.pequeno:only-child,
+marmita > picles.pequeno:only-child {
   top: calc(50% - 22px);
   left: calc(50% - 8px);
   z-index: 99999;
