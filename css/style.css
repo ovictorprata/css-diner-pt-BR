@@ -636,7 +636,7 @@ prato:before {
   background: rgba(255,255,255,1);
 }
 
-#fancy:after {
+#elegante:after {
   content: "";
   display: block;
   position: absolute;
@@ -759,7 +759,7 @@ board {
   display: none;
 }
 
-/* Fancy laranja stacking */
+/* elegante laranja stacking */
 
 prato maca,
 prato laranja {

@@ -34,7 +34,7 @@ var levels = [
   },
   {
     doThis : "Selecionar o prato elegante",
-    selector : "#fancy",
+    selector : "#elegante",
     selectorName: "Seletor de ID",
     helpTitle: "Selecionar elementos com um ID",
     syntax: "#id",
@@ -44,7 +44,7 @@ var levels = [
       '<strong>ul#long</strong> seleciona <tag>ul id="long"</tag>'
     ],
     boardMarkup : `
-    <prato id="fancy"/>
+    <prato id="elegante"/>
     <prato/>
     <marmita/>
     `
@@ -58,7 +58,7 @@ var levels = [
     help : "Seleciona todos os elementos <strong>B</strong> dentro de <strong>A</strong>. <strong>B</strong> é chamado de descendente porque está dentro de outro elemento.",
     examples : [
       '<strong>p&nbsp;&nbsp;strong</strong> seleciona todos os elementos <tag>strong</tag> que estão dentro de qualquer <tag>p</tag>',
-      '<strong>#fancy&nbsp;&nbsp;span</strong> seleciona qualquer elemento <tag>span</tag> que esteja dentro do elemento com <strong>id="fancy"</strong>',
+      '<strong>#elegante&nbsp;&nbsp;span</strong> seleciona qualquer elemento <tag>span</tag> que esteja dentro do elemento com <strong>id="elegante"</strong>',
     ],
     boardMarkup : `
     <marmita/>
@@ -70,7 +70,7 @@ var levels = [
   },
   {
     doThis : "Selecionar o picles no prato elegante",
-    selector : "#fancy pickle",
+    selector : "#elegante pickle",
     helpTitle: "Combinação dos Seletores Descendente & ID",
     syntax: "#id&nbsp;&nbsp;A",
     help : 'Você pode combinar qualquer seletor com o seletor de descendente.',
@@ -81,7 +81,7 @@ var levels = [
     <marmita>
     <laranja/>
     </marmita>
-    <prato id="fancy">
+    <prato id="elegante">
       <pickle/>
     </prato>
     <prato>
@@ -199,7 +199,7 @@ var levels = [
     <marmita>
       <laranja/>
     </marmita>
-    <prato id="fancy"/>
+    <prato id="elegante"/>
     `
   },
   {
@@ -214,9 +214,9 @@ var levels = [
         "help": "Isso seleciona todos os elementos dentro de <strong>A</strong>.",
         "exemplos": [
           "<strong>p *</strong> seleciona todos os elementos dentro de todos os elementos <tag>p</tag>.",
-          "<strong>ul.fancy *</strong> seleciona todos os elementos dentro de todos os elementos <tag>ul class=\"fancy\"</tag>."
+          "<strong>ul.elegante *</strong> seleciona todos os elementos dentro de todos os elementos <tag>ul class=\"elegante\"</tag>."
         ],
-        "boardMarkup": "<prato id=\"fancy\">\n  <laranja class=\"small\"/>\n</prato>\n<prato>\n  <pickle/>\n</prato>\n<maca class=\"small\"/>\n<prato>\n  <maca/>\n</prato>"
+        "boardMarkup": "<prato id=\"elegante\">\n  <laranja class=\"small\"/>\n</prato>\n<prato>\n  <pickle/>\n</prato>\n<maca class=\"small\"/>\n<prato>\n  <maca/>\n</prato>"
       },
       {
         "doThis": "Selecione cada maçã que está ao lado de um prato",
@@ -294,7 +294,7 @@ var levels = [
           "<strong>span:last-child</strong> seleciona todos os elementos de último filho <tag>span</tag>.",
           "<strong>ul li:last-child</strong> seleciona os últimos elementos <tag>li</tag> dentro de qualquer <tag>ul</tag>."
         ],
-        "boardMarkup": "<prato id=\"fancy\">\n  <maca class=\"small\"/>\n</prato>\n<prato/>\n<prato>\n  <laranja class=\"small\"/>\n  <laranja>\n</prato>\n<pickle class=\"small\"/>"
+        "boardMarkup": "<prato id=\"elegante\">\n  <maca class=\"small\"/>\n</prato>\n<prato/>\n<prato>\n  <laranja class=\"small\"/>\n  <laranja>\n</prato>\n<pickle class=\"small\"/>"
       }
     ]
   },  
@@ -313,7 +313,7 @@ var levels = [
     <prato/>
     <prato/>
     <prato/>
-    <prato id="fancy"/>
+    <prato id="elegante"/>
     `
   },
   {
@@ -374,7 +374,7 @@ var levels = [
     <prato/>
     <prato/>
     <prato/>
-    <prato id="fancy"/>
+    <prato id="elegante"/>
     <prato/>
     `
   },
@@ -413,7 +413,7 @@ var levels = [
       "<strong>p span:only-of-type</strong> seleciona um <tag>span</tag> dentro de qualquer <tag>p</tag> se for o único <tag>span</tag> ali."
     ],
     "boardMarkup": `
-    <prato id="fancy">
+    <prato id="elegante">
       <maca class="small" />
       <maca />
     </prato>
@@ -471,12 +471,12 @@ var levels = [
     "syntax": ":not(X)",
     "help": 'Você pode usar isso para selecionar todos os elementos que não correspondem ao seletor <strong>"X"</strong>.',
     "examples": [
-      '<strong>:not(#fancy)</strong> seleciona todos os elementos que não têm <strong>id="fancy"</strong>.',
+      '<strong>:not(#elegante)</strong> seleciona todos os elementos que não têm <strong>id="elegante"</strong>.',
       '<strong>div:not(:first-child)</strong> seleciona todos os <tag>div</tag> que não são o primeiro filho.',
       '<strong>:not(.big, .medium)</strong> seleciona todos os elementos que não têm <strong>class="big"</strong> ou <strong>class="medium"</strong>.'
     ],
     "boardMarkup": `
-    <prato id="fancy">
+    <prato id="elegante">
       <maca class="small" />
     </prato>
     <prato>
