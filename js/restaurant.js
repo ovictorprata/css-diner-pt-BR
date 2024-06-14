@@ -513,7 +513,7 @@ function sendEvent(category, action, label){
 }
 
 function winGame(){
-  $(".tabela").html('<span class="winner"><strong>You did it!</strong><br>You rock at CSS.</span>');
+  $(".tabela").html('<span class="winner"><strong>Você conseguiu!</strong><br>Agora você domina os seletores CSS.</span>');
   addNametags();
   finished = true;
   resettabela();
