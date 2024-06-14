@@ -181,6 +181,18 @@ var levels = [
     `
   },
   {
+    "doThis": "Selecione todas as coisas!",
+    "selector": "*",
+    "selectorName": "O Seletor Universal",
+    "helpTitle": "Você pode selecionar tudo!",
+    "syntax": "*",
+    "help": "Você pode selecionar todos os elementos com o seletor universal!",
+    "examples": [
+      "<strong>p *</strong> seleciona qualquer elemento dentro de todos os elementos <tag>p</tag>.",
+    ],
+    "boardMarkup": "\n<maca/>\n<prato>\n  <laranja class=\"pequeno\" />\n</prato>\n<marmita/>\n<marmita>\n  <laranja/>\n</marmita>\n<prato id=\"elegante\"/>\n"
+  },  
+  {
     "doThis": "Selecionar tudo em um prato",
     "selector": "prato *",
     "syntax": "A&nbsp;&nbsp;*",
@@ -188,13 +200,13 @@ var levels = [
     "help": "Isso seleciona todos os elementos dentro de <strong>A</strong>.",
     "examples": [
       "<strong>p *</strong> seleciona todos os elementos dentro de todos os elementos <tag>p</tag>.",
-      "<strong>ul.chique *</strong> seleciona todos os elementos dentro de todos os elementos <tag>ul class=\"chique\"</tag>."
+      "<strong>ul.elegante *</strong> seleciona todos os elementos dentro de todos os elementos <tag>ul class=\"elegante\"</tag>."
     ],
-    "boardMarkup": "\n<prato id=\"chique\">\n  <laranja class=\"small\"/>\n</prato>\n<prato>\n  <picles/>\n</prato>\n<apple class=\"small\"/>\n<prato>\n  <apple/>\n</prato>"
+    "boardMarkup": "\n<prato id=\"elegante\">\n  <laranja class=\"pequeno\"/>\n</prato>\n<prato>\n  <picles/>\n</prato>\n<maca class=\"pequeno\"/>\n<prato>\n  <maca/>\n</prato>"
   },
   {
     "doThis": "Selecionar todas as maçãs que estão ao lado de um prato",
-    "selector": "prato + apple",
+    "selector": "prato + maca",
     "helpTitle": "Selecionar um elemento que segue diretamente outro elemento",
     "selectorName": "Seletor de Irmão Adjacente",
     "syntax": "A + B",
@@ -203,31 +215,31 @@ var levels = [
       "<strong>p + .intro</strong> seleciona todos os elementos com <strong>class=\"intro\"</strong> que seguem diretamente um <tag>p</tag>",
       "<strong>div + a</strong> seleciona todos os elementos <tag>a</tag> que seguem diretamente um <tag>div</tag>"
     ],
-    "boardMarkup": "\n<bento>\n  <apple class=\"small\"/>\n</bento>\n<prato />\n<apple class=\"small\"/>\n<prato />\n<apple/>\n<apple class=\"small\"/>\n<apple class=\"small\"/>\n"
+    "boardMarkup": "\n<marmita>\n  <maca class=\"pequeno\"/>\n</marmita>\n<prato />\n<maca class=\"pequeno\"/>\n<prato />\n<maca/>\n<maca class=\"pequeno\"/>\n<maca class=\"pequeno\"/>\n"
   },
   {
     "selectorName": "Seletor de Irmão Geral",
     "helpTitle": "Selecionar elementos que seguem outro elemento",
     "syntax": "A ~ B",
-    "doThis": "Selecionar os picless ao lado do bento",
-    "selector": "bento ~ picles",
+    "doThis": "Selecionar os picles ao lado do marmita",
+    "selector": "marmita ~ picles",
     "help": "Você pode selecionar todos os irmãos de um elemento que o seguem. Isso é semelhante ao Seletor Adjacente (A + B), exceto que ele obtém todos os elementos seguintes em vez de apenas um.",
     "examples": [
       "<strong>A ~ B</strong> seleciona todos os <strong>B</strong> que seguem um <strong>A</strong>"
     ],
-    "boardMarkup": "\n<picles/>\n<bento>\n  <laranja class=\"small\"/>\n</bento>\n<picles class=\"small\"/>\n<picles/>\n<prato>\n  <picles/>\n</prato>\n<prato>\n  <picles class=\"small\"/>\n</prato>\n"
+    "boardMarkup": "\n<picles/>\n<marmita>\n  <laranja class=\"pequeno\"/>\n</marmita>\n<picles class=\"pequeno\"/>\n<picles/>\n<prato>\n  <picles/>\n</prato>\n<prato>\n  <picles class=\"pequeno\"/>\n</prato>\n"
   },
   {
     "selectorName": "Seletor de Filho",
     "syntax": "A > B&nbsp;",
     "doThis": "Selecionar a maçã diretamente em um prato",
-    "selector": "prato > apple",
+    "selector": "prato > maca",
     "helpTitle": "Selecionar filhos diretos de um elemento",
     "help": "Você pode selecionar elementos que são filhos diretos de outros elementos. Um elemento filho é qualquer elemento que está diretamente aninhado em outro elemento. <br><br>Elementos que são aninhados mais profundamente são chamados de elementos descendentes.",
     "examples": [
       "<strong>A > B</strong> seleciona todos os <strong>B</strong> que são filhos diretos de <strong>A</strong>"
     ],
-    "boardMarkup": "\n<prato>\n  <bento>\n    <apple/>\n  </bento>\n</prato>\n<prato>\n  <apple/>\n</prato>\n<prato/>\n<apple/>\n<apple class=\"small\"/>\n"
+    "boardMarkup": "\n<prato>\n  <marmita>\n    <maca/>\n  </marmita>\n</prato>\n<prato>\n  <maca/>\n</prato>\n<prato/>\n<maca/>\n<maca class=\"pequeno\"/>\n"
   },
   {
     "selectorName": "Pseudo-seletor Primeiro Filho",
@@ -242,7 +254,7 @@ var levels = [
       "<strong>p:first-child</strong> seleciona todos os elementos primeiro filho <tag>p</tag>.",
       "<strong>div p:first-child</strong> seleciona todos os elementos primeiro filho <tag>p</tag> que estão em um <tag>div</tag>."
     ],
-    "boardMarkup": "\n<bento/>\n<prato />\n<prato>\n  <laranja />\n  <laranja />\n  <laranja />\n</prato>\n<picles class=\"small\" />\n"
+    "boardMarkup": "\n<marmita/>\n<prato />\n<prato>\n  <laranja />\n  <laranja />\n  <laranja />\n</prato>\n<picles class=\"pequeno\" />\n"
   },
   {
     "selectorName": "Pseudo-seletor Único Filho",
@@ -255,13 +267,13 @@ var levels = [
       "<strong>span:only-child</strong> seleciona os elementos <tag>span</tag> que são o único filho de algum outro elemento.",
       "<strong>ul li:only-child</strong> seleciona o único elemento <tag>li</tag> que está em um <tag>ul</tag>."
     ],
-    "boardMarkup": "\n<prato>\n  <apple/>\n</prato>\n<prato>\n  <picles />\n</prato>\n<bento>\n  <picles />\n</bento>\n<prato>\n  <laranja class=\"small\"/>\n  <laranja/>\n</prato>\n<picles class=\"small\"/>\n"
+    "boardMarkup": "\n<prato>\n  <maca/>\n</prato>\n<prato>\n  <picles />\n</prato>\n<marmita>\n  <picles />\n</marmita>\n<prato>\n  <laranja class=\"pequeno\"/>\n  <laranja/>\n</prato>\n<picles class=\"pequeno\"/>\n"
   },
   {
     "selectorName": "Pseudo-seletor Último Filho",
     "helpTitle": "Selecionar o último elemento dentro de outro elemento",
     "doThis": "Selecionar a maçã pequena e o picles",
-    "selector": ".small:last-child",
+    "selector": ".pequeno:last-child",
     "syntax": ":last-child",
     "help": "Você pode usar este seletor para selecionar um elemento que é o último filho dentro de outro elemento. <br><br>Dica Pro &rarr; Em casos onde há apenas um elemento, aquele elemento conta como o primeiro filho, único filho e último filho!",
     "examples": [
@@ -269,6 +281,6 @@ var levels = [
       "<strong>span:last-child</strong> seleciona todos os elementos último filho <tag>span</tag>.",
       "<strong>ul li:last-child</strong> seleciona os últimos elementos <tag>li</tag> dentro de qualquer <tag>ul</tag>."
     ],
-    "boardMarkup": "\n<prato id=\"chique\">\n  <apple class=\"small\"/>\n</prato>\n<prato/>\n<prato>\n  <laranja class=\"small\"/>\n  <laranja>\n</prato>\n<picles class=\"small\"/>"
+    "boardMarkup": "\n<prato id=\"elegante\">\n  <maca class=\"pequeno\"/>\n</prato>\n<prato/>\n<prato>\n  <laranja class=\"pequeno\"/>\n  <laranja>\n</prato>\n<picles class=\"pequeno\"/>"
   }  
 ];
