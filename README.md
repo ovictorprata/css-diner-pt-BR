@@ -4,7 +4,7 @@ Este é um projeto originalmente criado por Flukeout para ajudar na aprendizagem
 
 ### Como Jogar
 
-Para acessar e jogar o CSS Diner traduzido para Português, visite [flukeout.github.io](http://flukeout.github.io/) ou [cssdiner.com](http://cssdiner.com/).
+Para acessar e jogar o CSS Diner traduzido para Português, visite [https://ovictorprata.github.io/css-diner-pt-BR/](https://ovictorprata.github.io/css-diner-pt-BR/)
 
 ### Contribuições
 
