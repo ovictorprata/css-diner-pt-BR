@@ -181,414 +181,94 @@ var levels = [
     `
   },
   {
-    doThis : "Selecione todas as coisas!",
-    selector : "*",
-    selectorName:  "O Seletor Universal",
-    helpTitle: "Você pode selecione tudo!",
-    syntax : "*",
-    help : 'Você pode selecione todos os elementos com o seletor universal! ',
-    examples : [
-      '<strong>p *</strong> seleciona qualquer elemento dentro de todos os elementos <tag>p</tag>.',
+    "doThis": "Selecionar tudo em um prato",
+    "selector": "prato *",
+    "syntax": "A&nbsp;&nbsp;*",
+    "helpTitle": "Combine o Seletor Universal",
+    "help": "Isso seleciona todos os elementos dentro de <strong>A</strong>.",
+    "examples": [
+      "<strong>p *</strong> seleciona todos os elementos dentro de todos os elementos <tag>p</tag>.",
+      "<strong>ul.chique *</strong> seleciona todos os elementos dentro de todos os elementos <tag>ul class=\"chique\"</tag>."
     ],
-    boardMarkup : `
-    <maca/>
-    <prato>
-      <laranja class="pequeno" />
-    </prato>
-    <marmita/>
-    <marmita>
-      <laranja/>
-    </marmita>
-    <prato id="elegante"/>
-    `
+    "boardMarkup": "\n<prato id=\"chique\">\n  <laranja class=\"small\"/>\n</prato>\n<prato>\n  <picles/>\n</prato>\n<apple class=\"small\"/>\n<prato>\n  <apple/>\n</prato>"
   },
   {
-    "title": "Agrupar Seletores: o Melhor dos Dois Mundos",
-    "introduction": "Quando você combina múltiplos seletores juntos, você pode selecione exatamente o que você quer, sem qualquer confusão. Lembre-se, a ordem é importante. <br><br>Encontre mais exemplos do Agrupamento de Seletores em https://example.com",
+    "doThis": "Selecionar todas as maçãs que estão ao lado de um prato",
+    "selector": "prato + apple",
+    "helpTitle": "Selecionar um elemento que segue diretamente outro elemento",
+    "selectorName": "Seletor de Irmão Adjacente",
+    "syntax": "A + B",
+    "help": "Isso seleciona todos os elementos <strong>B</strong> que seguem diretamente <strong>A</strong>. Elementos que seguem um ao outro são chamados de irmãos. Eles estão no mesmo nível, ou profundidade. <br/><br/>No markup HTML deste nível, elementos com a mesma indentação são irmãos.",
     "examples": [
-      {
-        "doThis": "Selecione tudo em um prato",
-        "selector": "prato *",
-        "syntax": "A&nbsp;&nbsp;*",
-        "helpTitle": "Combine o Seletor Universal",
-        "help": "Isso seleciona todos os elementos dentro de <strong>A</strong>.",
-        "exemplos": [
-          "<strong>p *</strong> seleciona todos os elementos dentro de todos os elementos <tag>p</tag>.",
-          "<strong>ul.elegante *</strong> seleciona todos os elementos dentro de todos os elementos <tag>ul class=\"elegante\"</tag>."
-        ],
-        "boardMarkup": "<prato id=\"elegante\">\n  <laranja class=\"pequeno\"/>\n</prato>\n<prato>\n  <picles/>\n</prato>\n<maca class=\"pequeno\"/>\n<prato>\n  <maca/>\n</prato>"
-      },
-      {
-        "doThis": "Selecione cada maçã que está ao lado de um prato",
-        "selector": "prato + maca",
-        "helpTitle": "Selecione um elemento que segue diretamente outro elemento",
-        "selectorName": "Seletor de Irmãos Adjacentes",
-        "syntax": "A + B",
-        "help": "Isso seleciona todos os elementos <strong>B</strong> que seguem diretamente <strong>A</strong>. Elementos que seguem um ao outro são chamados de irmãos. Eles estão no mesmo nível ou profundidade. <br/><br/>No marcado HTML para este nível, elementos com a mesma endentação são irmãos.",
-        "exemplos": [
-          "<strong>p + .intro</strong> seleciona todos os elementos com <strong>class=\"intro\"</strong> que seguem diretamente um <tag>p</tag>",
-          "<strong>div + a</strong> seleciona todos os elementos <tag>a</tag> que seguem diretamente um <tag>div</tag>"
-        ],
-        "boardMarkup": "<marmita>\n  <maca class=\"pequeno\"/>\n</marmita>\n<prato/>\n<maca class=\"pequeno\"/>\n<prato/>\n<maca/>\n<maca class=\"pequeno\"/>\n<maca class=\"pequeno\"/>"
-      },
-      {
-        "selectorName": "Seletor de Irmãos Gerais",
-        "helpTitle": "Selecione elementos que seguem outro elemento",
-        "syntax": "A ~ B",
-        "doThis": "Selecione os picles ao lado do marmita",
-        "selector": "marmita ~ picles",
-        "help": "Você pode selecione todos os irmãos de um elemento que o seguem. Isso é como o Seletor Adjacente (A + B), exceto que ele pega todos os elementos seguintes em vez de um.",
-        "exemplos": [
-          "<strong>A ~ B</strong> seleciona todos os <strong>B</strong> que seguem um <strong>A</strong>"
-        ],
-        "boardMarkup": "<picles/>\n<marmita>\n  <laranja class=\"pequeno\"/>\n</marmita>\n<picles class=\"pequeno\"/>\n<picles/>\n<prato>\n  <picles/>\n</prato>\n<prato>\n  <picles class=\"pequeno\"/>\n</prato>"
-      },
-      {
-        "selectorName": "Seletor de Filho",
-        "syntax": "A > B&nbsp;",
-        "doThis": "Selecione a maçã diretamente em um prato",
-        "selector": "prato > maca",
-        "helpTitle": "Selecione filhos diretos de um elemento",
-        "help": "Você pode selecione elementos que são filhos diretos de outros elementos. Um elemento filho é qualquer elemento que está aninhado diretamente em outro elemento. <br><br>Elementos que são aninhados mais profundamente do que isso são chamados de elementos descendentes.",
-        "exemplos": [
-          "<strong>A > B</strong> seleciona todos os <strong>B</strong> que são filhos diretos de <strong>A</strong>"
-        ],
-        "boardMarkup": "<prato>\n  <marmita>\n    <maca/>\n  </marmita>\n</prato>\n<prato>\n  <maca/>\n</prato>\n<prato/>\n<maca/>\n<maca class=\"pequeno\"/>"
-      },
-      {
-        "selectorName": "Pseudo-seletor do Primeiro Filho",
-        "helpTitle": "Selecione um elemento de primeiro filho dentro de outro elemento",
-        "doThis": "Selecione a laranja superior",
-        "selector": "prato :first-child",
-        "syntax": ":first-child",
-        "help": "Você pode selecione o primeiro elemento filho. Um elemento filho é qualquer elemento que está diretamente aninhado em outro elemento. Você pode combinar este pseudo-seletor com outros seletores.",
-        "exemplos": [
-          "<strong>:first-child</strong> seleciona todos os elementos de primeiro filho.",
-          "<strong>p:first-child</strong> seleciona todos os elementos de primeiro filho <tag>p</tag>.",
-          "<strong>div p:first-child</strong> seleciona todos os elementos de primeiro filho <tag>p</tag> que estão em um <tag>div</tag>."
-        ],
-        "boardMarkup": "<marmita/>\n<prato/>\n<prato>\n  <laranja/>\n  <laranja/>\n  <laranja/>\n</prato>\n<picles class=\"pequeno\"/>"
-      },
-      {
-        "selectorName": "Pseudo-seletor do Único Filho",
-        "helpTitle": "Selecione um elemento que é o único elemento dentro de outro",
-        "doThis": "Selecione a maçã e o picle nos pratos",
-        "selector": "prato :only-child",
-        "syntax": ":only-child",
-        "help": "Você pode selecione qualquer elemento que seja o único elemento dentro de outro.",
-        "exemplos": [
-          "<strong>span:only-child</strong> seleciona os elementos <tag>span</tag> que são o único filho de algum outro elemento.",
-          "<strong>ul li:only-child</strong> seleciona o único <tag>li</tag> que está em um <tag>ul</tag>."
-        ],
-        "boardMarkup": "<prato>\n  <maca/>\n</prato>\n<prato>\n  <picles/>\n</prato>\n<marmita>\n  <picles/>\n</marmita>\n<prato>\n  <laranja class=\"pequeno\"/>\n  <laranja/>\n</prato>\n<picles class=\"pequeno\"/>"
-      },
-      {
-        "selectorName": "Pseudo-seletor do Último Filho",
-        "helpTitle": "Selecione o último elemento dentro de outro elemento",
-        "doThis": "Selecione a maçã pequena e o picle",
-        "selector": ".pequeno:last-child",
-        "syntax": ":last-child",
-        "help": "Você pode usar este seletor para selecione um elemento que é o último elemento filho dentro de outro elemento. <br><br>Pro Dica &rarr; Em casos onde há apenas um elemento, esse elemento conta como primeiro filho, único filho e último filho!",
-        "exemplos": [
-          "<strong>:last-child</strong> seleciona todos os elementos de último filho.",
-          "<strong>span:last-child</strong> seleciona todos os elementos de último filho <tag>span</tag>.",
-          "<strong>ul li:last-child</strong> seleciona os últimos elementos <tag>li</tag> dentro de qualquer <tag>ul</tag>."
-        ],
-        "boardMarkup": "<prato id=\"elegante\">\n  <maca class=\"pequeno\"/>\n</prato>\n<prato/>\n<prato>\n  <laranja class=\"pequeno\"/>\n  <laranja>\n</prato>\n<picles class=\"pequeno\"/>"
-      }
-    ]
-  },  
-  {
-    "selectorName": "Nth Child Pseudo-selector",
-    "helpTitle": "Selecione um elemento pela sua ordem dentro de outro elemento",
-    "doThis": "Selecione o 3º prato",
-    "selector": ":nth-child(3)",
-    "syntax": ":nth-child(A)",
-    "help": "Seleciona o <strong>ésimo</strong> (Ex: 1º, 3º, 12º etc.) elemento filho em outro elemento.",
-    "examples": [
-      "<strong>:nth-child(8)</strong> seleciona todo elemento que é o 8º filho de outro elemento.",
-      "<strong>div p:nth-child(2)</strong> seleciona o segundo <strong>p</strong> em cada <strong>div</strong>"
+      "<strong>p + .intro</strong> seleciona todos os elementos com <strong>class=\"intro\"</strong> que seguem diretamente um <tag>p</tag>",
+      "<strong>div + a</strong> seleciona todos os elementos <tag>a</tag> que seguem diretamente um <tag>div</tag>"
     ],
-    "boardMarkup": `
-    <prato/>
-    <prato/>
-    <prato/>
-    <prato id="elegante"/>
-    `
+    "boardMarkup": "\n<bento>\n  <apple class=\"small\"/>\n</bento>\n<prato />\n<apple class=\"small\"/>\n<prato />\n<apple/>\n<apple class=\"small\"/>\n<apple class=\"small\"/>\n"
   },
   {
-    "selectorName": "Nth Last Child Selector",
-    "helpTitle": "Selecione um elemento pela sua ordem dentro de outro elemento, contando de trás para frente",
-    "doThis": "Selecione o 1º marmita",
-    "selector": "marmita:nth-last-child(3)",
-    "syntax": ":nth-last-child(A)",
-    "help": "Seleciona os filhos a partir do fundo do pai. Isso é como nth-child, mas contando de trás para frente!",
+    "selectorName": "Seletor de Irmão Geral",
+    "helpTitle": "Selecionar elementos que seguem outro elemento",
+    "syntax": "A ~ B",
+    "doThis": "Selecionar os picless ao lado do bento",
+    "selector": "bento ~ picles",
+    "help": "Você pode selecionar todos os irmãos de um elemento que o seguem. Isso é semelhante ao Seletor Adjacente (A + B), exceto que ele obtém todos os elementos seguintes em vez de apenas um.",
     "examples": [
-      "<strong>:nth-last-child(2)</strong> seleciona todos os elementos que são o penúltimo filho."
+      "<strong>A ~ B</strong> seleciona todos os <strong>B</strong> que seguem um <strong>A</strong>"
     ],
-    "boardMarkup": `
-    <prato/>
-    <marmita/>
-    <prato>
-      <laranja/>
-      <laranja/>
-      <laranja/>
-    </prato>
-    <marmita/>
-    `
+    "boardMarkup": "\n<picles/>\n<bento>\n  <laranja class=\"small\"/>\n</bento>\n<picles class=\"small\"/>\n<picles/>\n<prato>\n  <picles/>\n</prato>\n<prato>\n  <picles class=\"small\"/>\n</prato>\n"
   },
   {
-    "selectorName": "First of Type Selector",
-    "helpTitle": "Selecione o primeiro elemento de um tipo específico",
-    "doThis": "Selecione a primeira maçã",
-    "selector": "maca:first-of-type",
-    "syntax": ":first-of-type",
-    "help": "Seleciona o primeiro elemento desse tipo dentro de outro elemento.",
+    "selectorName": "Seletor de Filho",
+    "syntax": "A > B&nbsp;",
+    "doThis": "Selecionar a maçã diretamente em um prato",
+    "selector": "prato > apple",
+    "helpTitle": "Selecionar filhos diretos de um elemento",
+    "help": "Você pode selecionar elementos que são filhos diretos de outros elementos. Um elemento filho é qualquer elemento que está diretamente aninhado em outro elemento. <br><br>Elementos que são aninhados mais profundamente são chamados de elementos descendentes.",
     "examples": [
-      "<strong>span:first-of-type</strong> seleciona o primeiro <tag>span</tag> em qualquer elemento."
+      "<strong>A > B</strong> seleciona todos os <strong>B</strong> que são filhos diretos de <strong>A</strong>"
     ],
-    "boardMarkup": `
-    <laranja class="pequeno"/>
-    <maca/>
-    <maca class="pequeno"/>
-    <maca/>
-    <maca class="pequeno"/>
-    <prato>
-      <laranja class="pequeno"/>
-      <laranja/>
-    </prato>
-    `
+    "boardMarkup": "\n<prato>\n  <bento>\n    <apple/>\n  </bento>\n</prato>\n<prato>\n  <apple/>\n</prato>\n<prato/>\n<apple/>\n<apple class=\"small\"/>\n"
   },
   {
-    "selectorName": "Nth of Type Selector",
-    "doThis": "Selecione todos os pratos pares",
-    "selector": "prato:nth-of-type(even)",
-    "syntax": ":nth-of-type(A)",
-    "help": "Seleciona um elemento específico com base em seu tipo e ordem em outro elemento - ou instâncias pares ou ímpares desse elemento.",
+    "selectorName": "Pseudo-seletor Primeiro Filho",
+    "helpTitle": "Selecionar um elemento primeiro filho dentro de outro elemento",
+    "doThis": "Selecionar a laranja superior",
+    "selector": "prato :first-child",
+    "syntax": ":first-child",
+  
+    "help": "Você pode selecionar o primeiro elemento filho. Um elemento filho é qualquer elemento que está diretamente aninhado em outro elemento. Você pode combinar este pseudo-seletor com outros seletores.",
     "examples": [
-      "<strong>div:nth-of-type(2)</strong> seleciona a segunda instância de um div.",
-      "<strong>.example:nth-of-type(odd)</strong> seleciona todas as instâncias ímpares de uma classe de exemplo."
+      "<strong>:first-child</strong> seleciona todos os elementos primeiro filho.",
+      "<strong>p:first-child</strong> seleciona todos os elementos primeiro filho <tag>p</tag>.",
+      "<strong>div p:first-child</strong> seleciona todos os elementos primeiro filho <tag>p</tag> que estão em um <tag>div</tag>."
     ],
-    "boardMarkup": `
-    <prato/>
-    <prato/>
-    <prato/>
-    <prato/>
-    <prato id="elegante"/>
-    <prato/>
-    `
+    "boardMarkup": "\n<bento/>\n<prato />\n<prato>\n  <laranja />\n  <laranja />\n  <laranja />\n</prato>\n<picles class=\"small\" />\n"
   },
   {
-    "selectorName": "Nth-of-type Selector with Formula",
-    "doThis": "Selecione todos os 2º pratos, começando pelo 3º",
-    "selector": "prato:nth-of-type(2n+3)",
-    "syntax": ":nth-of-type(An+B)",
-    "help": "A fórmula nth-of-type seleciona cada enésimo elemento, iniciando a contagem em uma instância específica desse elemento.",
+    "selectorName": "Pseudo-seletor Único Filho",
+    "helpTitle": "Selecionar um elemento que é o único elemento dentro de outro.",
+    "doThis": "Selecionar a maçã e o picles nos pratos",
+    "selector": "prato :only-child",
+    "syntax": ":only-child",
+    "help": "Você pode selecionar qualquer elemento que seja o único elemento dentro de outro.",
     "examples": [
-      "<strong>span:nth-of-type(6n+2)</strong> seleciona cada 6ª instância de um <tag>span</tag>, começando (e incluindo) a segunda instância."
+      "<strong>span:only-child</strong> seleciona os elementos <tag>span</tag> que são o único filho de algum outro elemento.",
+      "<strong>ul li:only-child</strong> seleciona o único elemento <tag>li</tag> que está em um <tag>ul</tag>."
     ],
-    "boardMarkup": `
-    <prato/>
-    <prato>
-      <picles class="pequeno" />
-    </prato>
-    <prato>
-      <maca class="pequeno" />
-    </prato>
-    <prato/>
-    <prato>
-      <maca />
-    </prato>
-    <prato/>
-    `
+    "boardMarkup": "\n<prato>\n  <apple/>\n</prato>\n<prato>\n  <picles />\n</prato>\n<bento>\n  <picles />\n</bento>\n<prato>\n  <laranja class=\"small\"/>\n  <laranja/>\n</prato>\n<picles class=\"small\"/>\n"
   },
   {
-    "selectorName": "Only of Type Selector",
-    "helpTitle": "Selecione elementos que são os únicos do seu tipo dentro do elemento pai",
-    "selector": "maca:only-of-type",
-    "syntax": ":only-of-type",
-    "doThis": "Selecione a maçã no meio do prato",
-    "help": "Seleciona o único elemento desse tipo dentro de outro elemento.",
+    "selectorName": "Pseudo-seletor Último Filho",
+    "helpTitle": "Selecionar o último elemento dentro de outro elemento",
+    "doThis": "Selecionar a maçã pequena e o picles",
+    "selector": ".small:last-child",
+    "syntax": ":last-child",
+    "help": "Você pode usar este seletor para selecionar um elemento que é o último filho dentro de outro elemento. <br><br>Dica Pro &rarr; Em casos onde há apenas um elemento, aquele elemento conta como o primeiro filho, único filho e último filho!",
     "examples": [
-      "<strong>p span:only-of-type</strong> seleciona um <tag>span</tag> dentro de qualquer <tag>p</tag> se for o único <tag>span</tag> ali."
+      "<strong>:last-child</strong> seleciona todos os elementos último filho.",
+      "<strong>span:last-child</strong> seleciona todos os elementos último filho <tag>span</tag>.",
+      "<strong>ul li:last-child</strong> seleciona os últimos elementos <tag>li</tag> dentro de qualquer <tag>ul</tag>."
     ],
-    "boardMarkup": `
-    <prato id="elegante">
-      <maca class="pequeno" />
-      <maca />
-    </prato>
-    <prato>
-      <maca class="pequeno" />
-    </prato>
-    <prato>
-      <picles />
-    </prato>
-    `
-  },
-  {
-    "selectorName": "Last of Type Selector",
-    "helpTitle": "Selecione o último elemento de um tipo específico",
-    "doThis": "Selecione a última maçã e laranja",
-    "selector": ".pequeno:last-of-type",
-    "syntax": ":last-of-type",
-    "help": "Seleciona cada último elemento desse tipo dentro de outro elemento. Lembre-se que o tipo refere-se ao tipo de tag, então <tag>p</tag> e <tag>span</tag> são tipos diferentes. <br><br> Eu me pergunto se foi assim que o último dinossauro foi selecionado antes de se extinguir.",
-    "examples": [
-      "<strong>div:last-of-type</strong> seleciona o último <tag>div</tag> em cada elemento.",
-      "<strong>p span:last-of-type</strong> seleciona o último <tag>span</tag> em cada <tag>p</tag>."
-    ],
-    "boardMarkup": `
-    <laranja class="pequeno"/>
-    <laranja class="pequeno" />
-    <picles />
-    <picles />
-    <maca class="pequeno" />
-    <maca class="pequeno" />
-    `
-  },
-  {
-    "selectorName": "Empty Selector",
-    "helpTitle": "Selecione elementos que não têm filhos",
-    "doThis": "Selecione os marmitas vazios",
-    "selector": "marmita:empty",
-    "syntax": ":empty",
-    "help": "Seleciona elementos que não têm outros elementos dentro deles.",
-    "examples": [
-      "<strong>div:empty</strong> seleciona todos os elementos <tag>div</tag> vazios."
-    ],
-    "boardMarkup":`
-    <marmita/>
-    <marmita>
-      <picles class="pequeno"/>
-    </marmita>
-    <prato/>
-    <marmita/>`
-  },
-  {
-    "selectorName": "Negation Pseudo-class",
-    "helpTitle": "Selecione todos os elementos que não correspondem ao seletor de negação",
-    "doThis": "Selecione as maçãs grandes",
-    "selector": "maca:not(.pequeno)",
-    "syntax": ":not(X)",
-    "help": 'Você pode usar isso para selecione todos os elementos que não correspondem ao seletor <strong>"X"</strong>.',
-    "examples": [
-      '<strong>:not(#elegante)</strong> seleciona todos os elementos que não têm <strong>id="elegante"</strong>.',
-      '<strong>div:not(:first-child)</strong> seleciona todos os <tag>div</tag> que não são o primeiro filho.',
-      '<strong>:not(.grande, .medium)</strong> seleciona todos os elementos que não têm <strong>class="grande"</strong> ou <strong>class="medium"</strong>.'
-    ],
-    "boardMarkup": `
-    <prato id="elegante">
-      <maca class="pequeno" />
-    </prato>
-    <prato>
-      <maca />
-    </prato>
-    <maca />
-    <prato>
-      <laranja class="pequeno" />
-    </prato>
-    <picles class="pequeno" />
-    `
-  },{
-    "selectorName": "Attribute Selector",
-    "helpTitle": "Selecione todos os elementos que têm um atributo específico",
-    "doThis": "Selecione os itens para alguém",
-    "selector": "[for]",
-    "syntax": "[attribute]",
-    "help": 'Atributos aparecem dentro da tag de abertura de um elemento, assim: <tag>span attribute="value"</tag>. Um atributo nem sempre tem um valor, pode estar em branco!',
-    "examples": [
-      '<strong>a[href]</strong> seleciona todos os elementos <tag>a</tag> que têm um atributo <strong>href="qualquer coisa"</strong>.',
-      '<strong>[type]</strong> seleciona todos os elementos que têm um atributo <strong>type="qualquer coisa"</strong>.'
-    ],
-    "boardMarkup": `
-    <marmita><maca class="pequeno"/></marmita>
-    <maca for="Ethan"/>
-    <prato for="Alice"><picles/></prato>
-    <marmita for="Clara"><laranja/></marmita>
-    <picles/>`
-  },
-  {
-    "selectorName": "Attribute Selector",
-    "helpTitle": "Selecione todos os elementos que têm um atributo específico",
-    "doThis": "Selecione os pratos para alguém",
-    "selector": "prato[for]",
-    "syntax": "A[attribute]",
-    "help": "Combine o seletor de atributo com outro seletor (como o seletor de nome da tag) adicionando-o no final.",
-    "examples": [
-      '<strong>[value]</strong> seleciona todos os elementos que têm um atributo <strong>value="qualquer coisa"</strong>.',
-      '<strong>a[href]</strong> seleciona todos os elementos <tag>a</tag> que têm um atributo <strong>href="qualquer coisa"</strong>.',
-      '<strong>input[disabled]</strong> seleciona todos os elementos <tag>input</tag> com o atributo <strong>disabled</strong>.'
-    ],
-    "boardMarkup": `
-    <prato for="Sarah"><picles/></prato>
-    <prato for="Luke"><maca/></prato>
-    <prato/>
-    <marmita for="Steve"><laranja/></marmita>
-    `
-  },
-  {
-    "selectorName": "Attribute Value Selector",
-    "helpTitle": "Selecione todos os elementos que têm um valor específico para um atributo",
-    "doThis": "Selecione a refeição de Vitaly",
-    "selector": "[for=Vitaly]",
-    "syntax": '[attribute="value"]',
-    "help": "Seletores de atributo são sensíveis a maiúsculas e minúsculas, cada caractere deve corresponder exatamente.",
-    "examples": [
-      '<strong>input[type="checkbox"]</strong> seleciona todos os elementos de input do tipo checkbox.'
-    ],
-    "boardMarkup": `
-    <maca for="Alexei" />
-    <marmita for="Albina"><maca /></marmita>
-    <marmita for="Vitaly"><laranja/></marmita>
-    <picles/>
-    `
-  },
-  {
-    "selectorName": "Attribute Starts With Selector",
-    "helpTitle": "Selecione todos os elementos com um valor de atributo que começa com caracteres específicos",
-    "doThis": "Selecione os itens para nomes que começam com 'Sa'",
-    "selector": '[for^="Sa"]',
-    "syntax": '[attribute^="value"]',
-    "examples": [
-      '<strong>.toy[category^="Swim"]</strong> seleciona elementos com a classe <strong>toy</strong> e com <strong>category="Swimwear"</strong> ou <strong>category="Swimming"</strong>.'
-    ],
-    "boardMarkup": `
-    <prato for="Sam"><picles/></prato>
-    <marmita for="Sarah"><maca class="pequeno"/></marmita>
-    <marmita for="Mary"><laranja/></marmita>
-    `
-  },
-  {
-    "selectorName": "Attribute Ends With Selector",
-    "helpTitle": "Selecione todos os elementos com um valor de atributo que termina com caracteres específicos",
-    "doThis": "Selecione os itens para nomes que terminam com 'ato'",
-    "selector": '[for$="ato"]',
-    "syntax": '[attribute$="value"]',
-    "examples": [
-      '<strong>img[src$=".jpg"]</strong> seleciona todas as imagens que exibem uma imagem <strong>.jpg</strong>.',
-    ],
-    "boardMarkup": `
-    <maca class="pequeno"/>
-    <marmita for="Hayato"><picles/></marmita>
-    <maca for="Ryota"></maca>
-    <prato for="Minato"><laranja/></prato>
-    <picles class="pequeno"/>
-    `
-  },
-  {
-    "selectorName": "Attribute Wildcard Selector",
-    "helpTitle": "Selecione todos os elementos com um valor de atributo que contenha caracteres específicos em qualquer lugar",
-    "syntax": '[attribute*="value"]',
-    "doThis": "Selecione as refeições para nomes que contêm 'obb'",
-    "selector": '[for*="obb"]',
-    "help": 'Um seletor útil se você puder identificar um padrão comum em coisas como <strong>class</strong>, <strong>href</strong> ou atributos <strong>src</strong>.',
-    "examples": [
-      '<strong>img[src*="/thumbnails/"]</strong> seleciona todos os elementos de imagem que mostram imagens da pasta "thumbnails".',
-      '<strong>[class*="heading"]</strong> seleciona todos os elementos com "heading" em sua classe, como <strong>class="main-heading"</strong> e <strong>class="sub-heading"</strong>'
-    ],
-    "boardMarkup": `
-    <marmita for="Robbie"><maca /></marmita>
-    <marmita for="Timmy"><picles /></marmita>
-    <marmita for="Bobby"><laranja /></marmita>
-    `
+    "boardMarkup": "\n<prato id=\"chique\">\n  <apple class=\"small\"/>\n</prato>\n<prato/>\n<prato>\n  <laranja class=\"small\"/>\n  <laranja>\n</prato>\n<picles class=\"small\"/>"
   }  
 ];
