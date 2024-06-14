@@ -381,7 +381,7 @@ maca {
 }
 
 laranja {
-  background: laranja;
+  background: orange;
   border-color: #bd6e07;
 }
 
@@ -395,7 +395,7 @@ laranja,maca,pickle {
 
 
 carrot {
-  background: laranja;
+  background: orange;
   width: 60px;
   height: 60px;
   display: inline-block;
