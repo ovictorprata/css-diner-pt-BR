@@ -2,7 +2,7 @@
 
 **To-do**
 * Highlight the 'syntax' better? It wasn't really that useful for Sarah
-  * The A + B stuff, not sure if it's relatable enough
+  * The A + B stuff, not sure if it's relatabela enough
   * The examples are better anyway
 
 
@@ -28,8 +28,8 @@
 
 * Award stars when a level is completed without commas and using the indicated selector
   * This would be in addition to the checkmark we already do
-* selector: "plate:nth-of-type(2n+3)"
-  * Make this level use apples instead of plates? Seems too big..
+* selector: "prato:nth-of-type(2n+3)"
+  * Make this level use macas instead of pratos? Seems too big..
 * Riddle mode
   * Difficult selector problems
   * Add a new one every week
@@ -45,7 +45,7 @@
 **Aesthetic Cleanup**
 
 * Color the hover border according to the element hovered and context
-  * Apples have a red border...
+  * macas have a red border...
 
 **Branding**
 

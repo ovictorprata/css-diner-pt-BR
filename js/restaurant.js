@@ -126,27 +126,27 @@ $(document).ready(function(){
   });
 
   //Add tooltips
-  $(".table").on("mouseover","*",function(e){
+  $(".tabela").on("mouseover","*",function(e){
     e.stopPropagation();
     showTooltip($(this));
   });
 
-  //Shows the tooltip on the table
+  //Shows the tooltip on the tabela
   $(".markup").on("mouseover","div *",function(e){
     el = $(this);
     var markupElements = $(".markup *");
     var index = markupElements.index(el) -1;
-    showTooltip($(".table *").eq(index));
+    showTooltip($(".tabela *").eq(index));
     e.stopPropagation();
   });
 
-  // Shows the tooltip on the table
+  // Shows the tooltip on the tabela
   $(".markup").on("mouseout","*",function(e){
     e.stopPropagation();
     hideTooltip();
   });
 
-  $(".table").on("mouseout","*", function(e){
+  $(".tabela").on("mouseout","*", function(e){
     hideTooltip();
     e.stopPropagation();
   });
@@ -155,13 +155,13 @@ $(document).ready(function(){
     enterHit();
   })
 
-  $(".table-wrapper,.table-edge").css("opacity",0);
+  $(".tabela-wrapper,.tabela-edge").css("opacity",0);
 
   buildLevelmenu();
 
   setTimeout(function(){
     loadLevel();
-    $(".table-wrapper,.table-edge").css("opacity",1);
+    $(".tabela-wrapper,.tabela-edge").css("opacity",1);
   },50);
 });
 
@@ -237,7 +237,7 @@ function openMenu(){
 
 
 // Hides & shows the tooltip that appears when an eleemnt
-// on the table or the editor is hovered over.
+// on the tabela or the editor is hovered over.
 
 function hideTooltip(){
   $(".enhance").removeClass("enhance");
@@ -251,8 +251,8 @@ function showTooltip(el){
   }
 
   el.attr("data-hovered",true);
-  var tableElements = $(".table *");
-  var index = tableElements.index(el);
+  var tabelaElements = $(".tabela *");
+  var index = tabelaElements.index(el);
   var that = el;
   $(".markup > div *").eq(index).addClass("enhance").find("*").addClass("enhance");
 
@@ -345,19 +345,19 @@ function showHelp() {
   $(".display-help .selector").text(selector);
 }
 
-function resetTable(){
+function resettabela(){
   $(".display-help").removeClass("open-help");
   $(".clean,.strobe").removeClass("clean,strobe");
   $(".clean,.strobe").removeClass("clean,strobe");
   $("input").addClass("input-strobe");
-  $(".table *").each(function(){
+  $(".tabela *").each(function(){
     $(this).width($(this).width());
     // $(this).removeAttr("style");
     // TODO - needed?? Probably not, everything gets removed anyway
   });
 
-  var tableWidth = $(".table").outerWidth();
-  $(".table-wrapper, .table-edge").width(tableWidth);
+  var tabelaWidth = $(".tabela").outerWidth();
+  $(".tabela-wrapper, .tabela-edge").width(tabelaWidth);
 }
 
 function fireRule(rule) {
@@ -378,29 +378,29 @@ function fireRule(rule) {
   * Sean Nessworthy <sean@nessworthy.me>
   * On 03/17/14
   *
-  * Allow [div][.table] to preceed the answer.
-  * Makes sense if div.table is going to be included in the HTML viewer
+  * Allow [div][.tabela] to preceed the answer.
+  * Makes sense if div.tabela is going to be included in the HTML viewer
   * and users want to try and use it in their selectors.
   *
   * However, if it is included as a specific match, filter it out.
-  * This resolves the  "Match all the things!" level from beheading the table too.
+  * This resolves the  "Match all the things!" level from beheading the tabela too.
   * Relatedly, watching that happen made me nearly spill my drink.
   */
 
-  // var baseTable = $('.table-wrapper > .table, .table-wrapper > .nametags, .table-wrapper > .table-surface');
-  var baseTable = $('.table');
+  // var basetabela = $('.tabela-wrapper > .tabela, .tabela-wrapper > .nametags, .tabela-wrapper > .tabela-surface');
+  var basetabela = $('.tabela');
 
   // Check if jQuery will throw an error trying the mystery rule
   // If it errors out, change the rule to null so the wrong-guess animation will work
   try {
-    $(".table").find(rule).not(baseTable);
+    $(".tabela").find(rule).not(basetabela);
   }
   catch(err) {
     rule = null;
   }
 
-  var ruleSelected = $(".table").find(rule).not(baseTable);            // What the correct rule finds
-  var levelSelected = $(".table").find(level.selector).not(baseTable); // What the person finds
+  var ruleSelected = $(".tabela").find(rule).not(basetabela);            // What the correct rule finds
+  var levelSelected = $(".tabela").find(level.selector).not(basetabela); // What the person finds
 
   var win = false;
 
@@ -513,17 +513,17 @@ function sendEvent(category, action, label){
 }
 
 function winGame(){
-  $(".table").html('<span class="winner"><strong>You did it!</strong><br>You rock at CSS.</span>');
+  $(".tabela").html('<span class="winner"><strong>You did it!</strong><br>You rock at CSS.</span>');
   addNametags();
   finished = true;
-  resetTable();
+  resettabela();
 }
 
 function checkResults(ruleSelected,levelSelected,rule){
-  var ruleTable = $(".table").clone();
-  ruleTable.find(".strobe").removeClass("strobe");
-  ruleTable.find(rule).addClass("strobe");
-  return($(".table").html() == ruleTable.html());
+  var ruletabela = $(".tabela").clone();
+  ruletabela.find(".strobe").removeClass("strobe");
+  ruletabela.find(rule).addClass("strobe");
+  return($(".tabela").html() == ruletabela.html());
 }
 
 // Returns all formatted markup within an element...
@@ -560,7 +560,7 @@ function loadBoard(){
 
   var boardString = level.board;  // just a placeholder to iterate over...
   boardMarkup = ""; // what is this
-  var tableMarkup = ""; // what is this
+  var tabelaMarkup = ""; // what is this
   var editorMarkup = ""; // this is a string that represents the HTML
   showHelp();
 
@@ -573,21 +573,21 @@ function loadBoard(){
     }
   });
 
-  $(".table").html(level.boardMarkup);
+  $(".tabela").html(level.boardMarkup);
   addNametags();
-  $(".table *").addClass("pop");
+  $(".tabela *").addClass("pop");
 
 
-  $(".markup").html('<div>&ltdiv class="table"&gt' + markupHolder.html() + '&lt/div&gt</div>');
+  $(".markup").html('<div>&ltdiv class="tabela"&gt' + markupHolder.html() + '&lt/div&gt</div>');
 }
 
-// Adds nametags to the items on the table
+// Adds nametags to the items on the tabela
 function addNametags(){
   $(".nametags *").remove();
-  $(".table-wrapper").css("transform","rotateX(0)");
-  $(".table-wrapper").width($(".table-wrapper").width());
+  $(".tabela-wrapper").css("transform","rotateX(0)");
+  $(".tabela-wrapper").width($(".tabela-wrapper").width());
 
-  $(".table *").each(function(){
+  $(".tabela *").each(function(){
     if($(this).attr("for")){
       var pos = $(this).position();
       var width = $(this).width();
@@ -598,7 +598,7 @@ function addNametags(){
     }
   });
 
-  $(".table-wrapper").css("transform","rotateX(20deg)");
+  $(".tabela-wrapper").css("transform","rotateX(20deg)");
 }
 
 
@@ -628,7 +628,7 @@ function loadLevel(){
   localStorage.setItem("currentLevel",currentLevel);
 
   loadBoard();
-  resetTable();
+  resettabela();
 
   $(".level-header .level-text").html("Level " + (currentLevel+1) + " of " + levels.length);
 
@@ -642,7 +642,7 @@ function loadLevel(){
 
   //Strobe what's supposed to be selected
   setTimeout(function(){
-    $(".table " + level.selector).addClass("strobe");
+    $(".tabela " + level.selector).addClass("strobe");
     $(".pop").removeClass("pop");
   },200);
 
