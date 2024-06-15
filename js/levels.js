@@ -16,8 +16,8 @@ var levels = [
     `
   },
   {
-    doThis : "Selecione as marmitas",
-    selector : "marmita",
+    doThis : "Selecione as guardanapos",
+    selector : "guardanapo",
     syntax : "A",
     helpTitle : "Selecione elementos pelo tipo",
     selectorName : "Seletor de Tipo",
@@ -27,9 +27,9 @@ var levels = [
       '<strong>p</strong> seleciona todos os elementos <tag>p</tag>.',
     ],
     boardMarkup: `
-    <marmita/>
+    <guardanapo/>
     <prato/>
-    <marmita/>
+    <guardanapo/>
     `
   },
   {
@@ -46,7 +46,7 @@ var levels = [
     boardMarkup : `
     <prato id="elegante"/>
     <prato/>
-    <marmita/>
+    <guardanapo/>
     `
   },
   {
@@ -61,7 +61,7 @@ var levels = [
       '<strong>#elegante&nbsp;&nbsp;span</strong> seleciona qualquer elemento <tag>span</tag> que esteja dentro do elemento com <strong>id="elegante"</strong>',
     ],
     boardMarkup : `
-    <marmita/>
+    <guardanapo/>
     <prato>
       <maca/>
     </prato>
@@ -78,9 +78,9 @@ var levels = [
       '<strong>#maneiro&nbsp;span</strong> seleciona todos os elementos <tag>span</tag> que estão dentro de elementos com <strong>id="maneiro"</strong>'
     ],
     boardMarkup : `
-    <marmita>
+    <guardanapo>
     <laranja/>
-    </marmita>
+    </guardanapo>
     <prato id="elegante">
       <picles/>
     </prato>
@@ -121,9 +121,9 @@ var levels = [
     boardMarkup :`
     <maca/>
     <maca class="pequeno"/>
-    <marmita>
+    <guardanapo>
       <laranja class="pequeno"/>
-    </marmita>
+    </guardanapo>
     <prato>
       <laranja/>
     </prato>
@@ -132,30 +132,30 @@ var levels = [
     </prato>`
   },
   {
-    doThis : "Selecione as laranjas pequenas nas marmitas",
-    selector : "marmita laranja.pequeno",
+    doThis : "Selecione as laranjas pequenas nas guardanapos",
+    selector : "guardanapo laranja.pequeno",
     syntax: "BORAA! Você dá conta!",
     helpTitle: "Você consegue...",
     help : 'Combine o que você aprendeu nos últimos níveis para resolver este!',
     boardMarkup : `
-    <marmita>
+    <guardanapo>
       <laranja/>
-    </marmita>
+    </guardanapo>
     <laranja class="pequeno"/>
-    <marmita>
+    <guardanapo>
       <laranja class="pequeno"/>
-    </marmita>
-    <marmita>
+    </guardanapo>
+    <guardanapo>
       <maca class="pequeno"/>
-    </marmita>
-    <marmita>
+    </guardanapo>
+    <guardanapo>
       <laranja class="pequeno"/>
-    </marmita>
+    </guardanapo>
     `
   },
   {
-    doThis : "Selecione todos os pratos e marmitas",
-    selector : "prato,marmita",
+    doThis : "Selecione todos os pratos e guardanapos",
+    selector : "prato,guardanapo",
     selectorName : "Combinador de Vírgula",
     helpTitle: "Combine, seletores, com... vírgulas!",
     syntax : "A, B",
@@ -170,9 +170,9 @@ var levels = [
     <prato>
       <picles/>
     </prato>
-    <marmita>
+    <guardanapo>
       <picles/>
-    </marmita>
+    </guardanapo>
     <prato>
       <picles/>
     </prato>
@@ -190,7 +190,7 @@ var levels = [
     "examples": [
       "<strong>p *</strong> seleciona qualquer elemento dentro de todos os elementos <tag>p</tag>.",
     ],
-    "boardMarkup": "\n<maca/>\n<prato>\n  <laranja class=\"pequeno\" />\n</prato>\n<marmita/>\n<marmita>\n  <laranja/>\n</marmita>\n<prato id=\"elegante\"/>\n"
+    "boardMarkup": "\n<maca/>\n<prato>\n  <laranja class=\"pequeno\" />\n</prato>\n<guardanapo/>\n<guardanapo>\n  <laranja/>\n</guardanapo>\n<prato id=\"elegante\"/>\n"
   },  
   {
     "doThis": "Selecione tudo em um prato",
@@ -215,19 +215,19 @@ var levels = [
       "<strong>p + .intro</strong> seleciona todos os elementos com <strong>class=\"intro\"</strong> que seguem diretamente um <tag>p</tag>",
       "<strong>div + a</strong> seleciona todos os elementos <tag>a</tag> que seguem diretamente um <tag>div</tag>"
     ],
-    "boardMarkup": "\n<marmita>\n  <maca class=\"pequeno\"/>\n</marmita>\n<prato />\n<maca class=\"pequeno\"/>\n<prato />\n<maca/>\n<maca class=\"pequeno\"/>\n<maca class=\"pequeno\"/>\n"
+    "boardMarkup": "\n<guardanapo>\n  <maca class=\"pequeno\"/>\n</guardanapo>\n<prato />\n<maca class=\"pequeno\"/>\n<prato />\n<maca/>\n<maca class=\"pequeno\"/>\n<maca class=\"pequeno\"/>\n"
   },
   {
     "selectorName": "Seletor de Irmão Geral",
     "helpTitle": "Selecione elementos que seguem outro elemento",
     "syntax": "A ~ B",
-    "doThis": "Selecione os picles ao lado do marmita",
-    "selector": "marmita ~ picles",
+    "doThis": "Selecione os picles ao lado do guardanapo",
+    "selector": "guardanapo ~ picles",
     "help": "Você pode selecione todos os irmãos de um elemento que o seguem. Isso é semelhante ao Seletor Adjacente (A + B), exceto que ele obtém todos os elementos seguintes em vez de apenas um.",
     "examples": [
       "<strong>A ~ B</strong> seleciona todos os <strong>B</strong> que são irmãos de um <strong>A</strong>"
     ],
-    "boardMarkup": "\n<picles/>\n<marmita>\n  <laranja class=\"pequeno\"/>\n</marmita>\n<picles class=\"pequeno\"/>\n<picles/>\n<prato>\n  <picles/>\n</prato>\n<prato>\n  <picles class=\"pequeno\"/>\n</prato>\n"
+    "boardMarkup": "\n<picles/>\n<guardanapo>\n  <laranja class=\"pequeno\"/>\n</guardanapo>\n<picles class=\"pequeno\"/>\n<picles/>\n<prato>\n  <picles/>\n</prato>\n<prato>\n  <picles class=\"pequeno\"/>\n</prato>\n"
   },
   {
     "selectorName": "Seletor de Filho",
@@ -239,7 +239,7 @@ var levels = [
     "examples": [
       "<strong>A > B</strong> seleciona todos os <strong>B</strong> que são filhos diretos de <strong>A</strong>"
     ],
-    "boardMarkup": "\n<prato>\n  <marmita>\n    <maca/>\n  </marmita>\n</prato>\n<prato>\n  <maca/>\n</prato>\n<prato/>\n<maca/>\n<maca class=\"pequeno\"/>\n"
+    "boardMarkup": "\n<prato>\n  <guardanapo>\n    <maca/>\n  </guardanapo>\n</prato>\n<prato>\n  <maca/>\n</prato>\n<prato/>\n<maca/>\n<maca class=\"pequeno\"/>\n"
   },
   {
     "selectorName": "Seletor de Atributo",
@@ -252,7 +252,7 @@ var levels = [
       "<strong>a[href]</strong> seleciona todos os elementos <tag>a</tag> que têm um atributo <strong>href=\"alguma-coisa\"</strong>.",
       "<strong>[type]</strong> seleciona todos os elementos que têm um  atributo <strong>type=\"alguma-coisa\"</strong>"
     ],
-    "boardMarkup": "\n<marmita><maca class=\"pequeno\"/></marmita>\n<maca for=\"Victor\"/>\n<prato for=\"Prata\"><picles/></prato>\n<marmita for=\"Clara\"><laranja/></marmita>\n<picles/>\n"
+    "boardMarkup": "\n<guardanapo><maca class=\"pequeno\"/></guardanapo>\n<maca for=\"Victor\"/>\n<prato for=\"Prata\"><picles/></prato>\n<guardanapo for=\"Clara\"><laranja/></guardanapo>\n<picles/>\n"
   },
   
   {
@@ -267,7 +267,7 @@ var levels = [
       "<strong>a[href]</strong> seleciona todos os elementos <tag>a</tag> que têm um atributo <strong>href=\"alguma-coisa\"</strong>.",
       "<strong>input[disabled]</strong> seleciona todos os elementos <tag>input</tag> com o atributo <strong>disabled</strong>"
     ],
-    "boardMarkup": "\n<prato for=\"Sarah\"><picles/></prato>\n<prato for=\"Prata\"><maca/></prato>\n<prato/>\n<marmita for=\"Victor\"><laranja/></marmita>\n"
+    "boardMarkup": "\n<prato for=\"Sarah\"><picles/></prato>\n<prato for=\"Prata\"><maca/></prato>\n<prato/>\n<guardanapo for=\"Victor\"><laranja/></guardanapo>\n"
   },
   {
     "selectorName": "Seletor de Valor de Atributo",
@@ -279,7 +279,7 @@ var levels = [
     "examples": [
       "<strong>input[type=\"checkbox\"]</strong> seleciona todos os elementos de input do tipo checkbox."
     ],
-    "boardMarkup": "\n<maca for=\"Alex\" />\n<marmita for=\"Fernanda\"><maca /></marmita>\n<marmita for=\"Prata\"><laranja/></marmita>\n<picles/>\n"
+    "boardMarkup": "\n<maca for=\"Alex\" />\n<guardanapo for=\"Fernanda\"><maca /></guardanapo>\n<guardanapo for=\"Prata\"><laranja/></guardanapo>\n<picles/>\n"
   },
   {
     "selectorName": "Seletor de Começa Com",
@@ -290,7 +290,7 @@ var levels = [
     "examples": [
       "<strong>.brinquedo[categoria^=\"Es\"]</strong> seleciona elementos com a classe <strong>brinquedo</strong> e com <strong>categoria=\"Esportes\"</strong> ou <strong>categoria=\"Estratégia\"</strong>."
     ],
-    "boardMarkup": "\n<prato for=\"Vinicius\"><picles/></prato>\n<marmita for=\"Victor\"><maca class=\"pequeno\"/></marmita>\n<marmita for=\"Cláudio\"><laranja/></marmita>\n"
+    "boardMarkup": "\n<prato for=\"Vinicius\"><picles/></prato>\n<guardanapo for=\"Victor\"><maca class=\"pequeno\"/></guardanapo>\n<guardanapo for=\"Cláudio\"><laranja/></guardanapo>\n"
   },
   {
     "selectorName": "Seletor de Termina Com",
@@ -302,7 +302,7 @@ var levels = [
     "examples": [
       "<strong>img[src$=\".jpg\"]</strong> seleciona todas as imagens que exibem uma imagem <strong>.jpg</strong>.",
     ],
-    "boardMarkup": "\n<maca class=\"pequeno\"/>\n<marmita for=\"Betina\"><picles/></marmita>\n<maca for=\"Bianca\"></maca>\n<prato for=\"Marina\"><laranja/></prato>\n<picles class=\"pequeno\"/>\n"
+    "boardMarkup": "\n<maca class=\"pequeno\"/>\n<guardanapo for=\"Betina\"><picles/></guardanapo>\n<maca for=\"Bianca\"></maca>\n<prato for=\"Marina\"><laranja/></prato>\n<picles class=\"pequeno\"/>\n"
   },
   {
     "selectorName": "Seletor de Coringa de Atributo",
@@ -315,19 +315,19 @@ var levels = [
       "<strong>img[src*=\"/thumbnails/\"]</strong> seleciona todos os elementos de imagem que exibem imagens da pasta \"thumbnails\".",
       "<strong>[class*=\"cabecalho\"]</strong> seleciona todos os elementos com \"cabecalho\" em sua classe, como <strong>class=\"cabecalho-principal\"</strong> e <strong>class=\"sub-cabecalho\"</strong>"
     ],
-    "boardMarkup": "\n<marmita for=\"Daniela\"><maca /></marmita>\n<marmita for=\"Gabriela\"><picles /></marmita>\n<marmita for=\"Danielly\"><laranja /></marmita>\n"
+    "boardMarkup": "\n<guardanapo for=\"Daniela\"><maca /></guardanapo>\n<guardanapo for=\"Gabriela\"><picles /></guardanapo>\n<guardanapo for=\"Danielly\"><laranja /></guardanapo>\n"
   },
   {
     "selectorName": "Seletor Vazio",
     "helpTitle": "Selecione elementos que não têm filhos",
-    "doThis": "Selecione as marmitas vazias",
-    "selector": "marmita:empty",
+    "doThis": "Selecione as guardanapos vazias",
+    "selector": "guardanapo:empty",
     "syntax": ":empty",
     "help": "Seleciona elementos que não têm nenhum outro elemento dentro deles.",
     "examples": [
       "<strong>div:empty</strong> seleciona todos os elementos <tag>div</tag> vazios."
     ],
-    "boardMarkup": "\n<marmita/>\n<marmita>\n  <picles class=\"pequeno\"/>\n</marmita>\n<prato/>\n<marmita/>\n"
+    "boardMarkup": "\n<guardanapo/>\n<guardanapo>\n  <picles class=\"pequeno\"/>\n</guardanapo>\n<prato/>\n<guardanapo/>\n"
   },
   {
     "selectorName": "Pseudo-classe de Negação",
@@ -356,7 +356,7 @@ var levels = [
       "<strong>p:first-child</strong> seleciona todos os elementos primeiro filho <tag>p</tag>.",
       "<strong>div p:first-child</strong> seleciona todos os elementos primeiro filho <tag>p</tag> que estão em um <tag>div</tag>."
     ],
-    "boardMarkup": "\n<marmita/>\n<prato />\n<prato>\n  <laranja />\n  <laranja />\n  <laranja />\n</prato>\n<picles class=\"pequeno\" />\n"
+    "boardMarkup": "\n<guardanapo/>\n<prato />\n<prato>\n  <laranja />\n  <laranja />\n  <laranja />\n</prato>\n<picles class=\"pequeno\" />\n"
   },
   {
     "selectorName": "Pseudo-seletor Único Filho",
@@ -369,7 +369,7 @@ var levels = [
       "<strong>span:only-child</strong> seleciona os elementos <tag>span</tag> que são o único filho de algum outro elemento.",
       "<strong>ul li:only-child</strong> seleciona o único elemento <tag>li</tag> que está em um <tag>ul</tag>."
     ],
-    "boardMarkup": "\n<prato>\n  <maca/>\n</prato>\n<prato>\n  <picles />\n</prato>\n<marmita>\n  <picles />\n</marmita>\n<prato>\n  <laranja class=\"pequeno\"/>\n  <laranja/>\n</prato>\n<picles class=\"pequeno\"/>\n"
+    "boardMarkup": "\n<prato>\n  <maca/>\n</prato>\n<prato>\n  <picles />\n</prato>\n<guardanapo>\n  <picles />\n</guardanapo>\n<prato>\n  <laranja class=\"pequeno\"/>\n  <laranja/>\n</prato>\n<picles class=\"pequeno\"/>\n"
   },
   {
     "selectorName": "Pseudo-seletor Último Filho",
@@ -401,14 +401,14 @@ var levels = [
   {
     "selectorName": "Seletor Nth Last Child",
     "helpTitle": "Selecione um elemento pela sua ordem em outro elemento, contando do final",
-    "doThis": "Selecione a 1º marmita",
-    "selector": "marmita:nth-last-child(3)",
+    "doThis": "Selecione a 1º guardanapo",
+    "selector": "guardanapo:nth-last-child(3)",
     "syntax": ":nth-last-child(A)",
     "help": "Seleciona os filhos a partir do final do pai. É como o nth-child, mas contando do final!",
     "examples": [
       "<strong>:nth-last-child(2)</strong> seleciona todos os elementos que são o penúltimo filho."
     ],
-    "boardMarkup": "\n<prato/>\n<marmita/>\n<prato>\n  <laranja/>\n  <laranja/>\n  <laranja/>\n</prato>\n<marmita/>\n"
+    "boardMarkup": "\n<prato/>\n<guardanapo/>\n<prato>\n  <laranja/>\n  <laranja/>\n  <laranja/>\n</prato>\n<guardanapo/>\n"
   },
   {
     "selectorName": "Primeiro do Tipo Selector",

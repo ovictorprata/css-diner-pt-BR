@@ -167,7 +167,7 @@ header {
   right: 20px;
 }
 
-laranja, maca, picles, marmita, prato {
+laranja, maca, picles, guardanapo, prato {
   transition: transform ease-out .2s;
 }
 
@@ -203,7 +203,7 @@ laranja, maca, picles, marmita, prato {
   100% { transform: translateY(-600px) rotate3d(0,0,0,0deg);}
 }
 
-marmita, prato {
+guardanapo, prato {
   box-shadow: 0px 8px 0px rgba(0,0,0,.1);
   display: inline-block;
   width: 100px;
@@ -219,7 +219,7 @@ prato {
   border-radius: 100px;
 }
 
-marmita {
+guardanapo {
   height: 100px;
   background: brown;
   position: relative;
@@ -229,7 +229,7 @@ marmita {
 
 
 
-prato marmita {
+prato guardanapo {
   height: 74px;
   width: 74px;
   position: absolute;
@@ -238,12 +238,12 @@ prato marmita {
 
 }
 
-prato marmita maca,
-prato marmita laranja {
+prato guardanapo maca,
+prato guardanapo laranja {
   top: -36px !important;
 }
 
-marmita:before {
+guardanapo:before {
   content:"";
   position: absolute;
   width: calc(100%);
@@ -462,8 +462,8 @@ laranja:before,maca:before {
 
 /*FRUITS ON A PLATTER*/
 
-marmita laranja,
-marmita maca,
+guardanapo laranja,
+guardanapo maca,
 prato laranja,
 prato maca
  {
@@ -474,28 +474,28 @@ prato maca
 
 prato > maca:last-child,
 prato > laranja:last-child,
-marmita > maca:last-child,
-marmita > laranja:last-child
+guardanapo > maca:last-child,
+guardanapo > laranja:last-child
 {
   top: calc(50% - 35px);
 }
 
 prato .pequeno,
-marmita .pequeno {
+guardanapo .pequeno {
   left: calc(50% - 15px);
   margin-left:0;
   margin-right:0;
 }
 
 prato > .pequeno:only-child,
-marmita > .pequeno:only-child {
+guardanapo > .pequeno:only-child {
   position: absolute;
   top: calc(50% - 15px);
   margin:0;
 }
 
 prato > picles:only-child,
-marmita > picles:only-child {
+guardanapo > picles:only-child {
   top: calc(50% - 40px);
   left: calc(50% - 10px);
   z-index: 99999;
@@ -504,7 +504,7 @@ marmita > picles:only-child {
 }
 
 prato > picles.pequeno:only-child,
-marmita > picles.pequeno:only-child {
+guardanapo > picles.pequeno:only-child {
   top: calc(50% - 22px);
   left: calc(50% - 8px);
   z-index: 99999;
