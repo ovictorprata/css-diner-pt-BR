@@ -2,7 +2,7 @@ var levels = [
   {
     helpTitle : "Selecione elementos pelo tipo",
     selectorName : "Seletor de Tipo",
-    doThis : "Selecione os pratos",
+    doThis : "Selecione os pratos pela tag",
     selector : "prato",
     syntax : "A",
     help : "Seleciona todos os elementos do tipo <strong>A</strong>. Tipo refere-se ao tipo de tag, então <tag>div</tag>, <tag>p</tag> e <tag>ul</tag> são todos tipos diferentes de elementos.",
