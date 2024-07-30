@@ -16,7 +16,7 @@ var levels = [
     `
   },
   {
-    doThis : "Selecione as guardanapos",
+    doThis : "Selecione os guardanapos",
     selector : "guardanapo",
     syntax : "A",
     helpTitle : "Selecione elementos pelo tipo",
@@ -33,8 +33,8 @@ var levels = [
     `
   },
   {
-    doThis : "Selecione o prato elegante",
-    selector : "#elegante",
+    doThis : "Selecione o prato chique",
+    selector : "#chique",
     selectorName: "Seletor de ID",
     helpTitle: "Selecione elementos com um ID",
     syntax: "#id",
@@ -44,7 +44,7 @@ var levels = [
       '<strong>ul#longo</strong> seleciona <tag>ul id="longo"</tag>'
     ],
     boardMarkup : `
-    <prato id="elegante"/>
+    <prato id="chique"/>
     <prato/>
     <guardanapo/>
     `
@@ -58,7 +58,7 @@ var levels = [
     help : "Seleciona todos os elementos <strong>B</strong> dentro de <strong>A</strong>. <strong>B</strong> é chamado de descendente porque está dentro de outro elemento.",
     examples : [
       '<strong>p&nbsp;&nbsp;strong</strong> seleciona todos os elementos <tag>strong</tag> que estão dentro de qualquer <tag>p</tag>',
-      '<strong>#elegante&nbsp;&nbsp;span</strong> seleciona qualquer elemento <tag>span</tag> que esteja dentro do elemento com <strong>id="elegante"</strong>',
+      '<strong>#chique&nbsp;&nbsp;span</strong> seleciona qualquer elemento <tag>span</tag> que esteja dentro do elemento com <strong>id="chique"</strong>',
     ],
     boardMarkup : `
     <guardanapo/>
@@ -69,8 +69,8 @@ var levels = [
     `
   },
   {
-    doThis : "Selecione o picles no prato elegante",
-    selector : "#elegante picles",
+    doThis : "Selecione o picles no prato chique",
+    selector : "#chique picles",
     helpTitle: "Combinação dos Seletores Descendente & ID",
     syntax: "#id&nbsp;&nbsp;A",
     help : 'Você pode combinar qualquer seletor com o seletor de descendente.',
@@ -81,7 +81,7 @@ var levels = [
     <guardanapo>
     <laranja/>
     </guardanapo>
-    <prato id="elegante">
+    <prato id="chique">
       <picles/>
     </prato>
     <prato>
@@ -132,7 +132,7 @@ var levels = [
     </prato>`
   },
   {
-    doThis : "Selecione as laranjas pequenas nas guardanapos",
+    doThis : "Selecione as laranjas pequenas nos guardanapos",
     selector : "guardanapo laranja.pequeno",
     syntax: "BORAA! Você dá conta!",
     helpTitle: "Você consegue...",
@@ -190,19 +190,19 @@ var levels = [
     "examples": [
       "<strong>p *</strong> seleciona qualquer elemento dentro de todos os elementos <tag>p</tag>.",
     ],
-    "boardMarkup": "\n<maca/>\n<prato>\n  <laranja class=\"pequeno\" />\n</prato>\n<guardanapo/>\n<guardanapo>\n  <laranja/>\n</guardanapo>\n<prato id=\"elegante\"/>\n"
+    "boardMarkup": "\n<maca/>\n<prato>\n  <laranja class=\"pequeno\" />\n</prato>\n<guardanapo/>\n<guardanapo>\n  <laranja/>\n</guardanapo>\n<prato id=\"chique\"/>\n"
   },  
   {
-    "doThis": "Selecione tudo em um prato",
+    "doThis": "Selecione tudo em cima de um prato",
     "selector": "prato *",
     "syntax": "A&nbsp;&nbsp;*",
     "helpTitle": "Combine o Seletor Universal",
     "help": "Isso seleciona todos os elementos dentro de <strong>A</strong>.",
     "examples": [
       "<strong>p *</strong> seleciona todos os elementos dentro de todos os elementos <tag>p</tag>.",
-      "<strong>ul.elegante *</strong> seleciona todos os elementos dentro de todos os elementos <tag>ul class=\"elegante\"</tag>."
+      "<strong>ul.chique *</strong> seleciona todos os elementos dentro de todos os elementos <tag>ul class=\"chique\"</tag>."
     ],
-    "boardMarkup": "\n<prato id=\"elegante\">\n  <laranja class=\"pequeno\"/>\n</prato>\n<prato>\n  <picles/>\n</prato>\n<maca class=\"pequeno\"/>\n<prato>\n  <maca/>\n</prato>"
+    "boardMarkup": "\n<prato id=\"chique\">\n  <laranja class=\"pequeno\"/>\n</prato>\n<prato>\n  <picles/>\n</prato>\n<maca class=\"pequeno\"/>\n<prato>\n  <maca/>\n</prato>"
   },
   {
     "doThis": "Selecione todas as maçãs que estão ao lado de um prato",
@@ -320,7 +320,7 @@ var levels = [
   {
     "selectorName": "Seletor Vazio",
     "helpTitle": "Selecione elementos que não têm filhos",
-    "doThis": "Selecione as guardanapos vazias",
+    "doThis": "Selecione os guardanapos sem nada em cima",
     "selector": "guardanapo:empty",
     "syntax": ":empty",
     "help": "Seleciona elementos que não têm nenhum outro elemento dentro deles.",
@@ -337,11 +337,11 @@ var levels = [
     "syntax": ":not(X)",
     "help": "Você pode usar isso para selecione todos os elementos que não correspondem ao seletor <strong>\"X\"</strong>.",
     "examples": [
-      "<strong>:not(#elegante)</strong> seleciona todos os elementos que não têm <strong>id=\"elegante\"</strong>.",
+      "<strong>:not(#chique)</strong> seleciona todos os elementos que não têm <strong>id=\"chique\"</strong>.",
       "<strong>div:not(:first-child)</strong> seleciona todos os <tag>div</tag> que não são o primeiro filho.",
       "<strong>:not(.grande, .medio)</strong> seleciona todos os elementos que não têm <strong>class=\"grande\"</strong> ou <strong>class=\"medio\"</strong>."
     ],
-    "boardMarkup": "\n<prato id=\"elegante\">\n  <maca class=\"pequeno\" />\n</prato>\n<prato>\n  <maca />\n</prato>\n<maca />\n<prato>\n  <laranja class=\"pequeno\" />\n</prato>\n<picles class=\"pequeno\" />\n"
+    "boardMarkup": "\n<prato id=\"chique\">\n  <maca class=\"pequeno\" />\n</prato>\n<prato>\n  <maca />\n</prato>\n<maca />\n<prato>\n  <laranja class=\"pequeno\" />\n</prato>\n<picles class=\"pequeno\" />\n"
   },
   {
     "selectorName": "Pseudo-seletor Primeiro Filho",
@@ -361,7 +361,7 @@ var levels = [
   {
     "selectorName": "Pseudo-seletor Único Filho",
     "helpTitle": "Selecione um elemento que é o único elemento dentro de outro.",
-    "doThis": "Selecione a maçã e o picles nos pratos",
+    "doThis": "Selecione a maçã e o picles que estão em cima dos pratos",
     "selector": "prato :only-child",
     "syntax": ":only-child",
     "help": "Você pode selecione qualquer elemento que seja o único elemento dentro de outro.",
@@ -383,7 +383,7 @@ var levels = [
       "<strong>span:last-child</strong> seleciona todos os elementos último filho <tag>span</tag>.",
       "<strong>ul li:last-child</strong> seleciona os últimos elementos <tag>li</tag> dentro de qualquer <tag>ul</tag>."
     ],
-    "boardMarkup": "\n<prato id=\"elegante\">\n  <maca class=\"pequeno\"/>\n</prato>\n<prato/>\n<prato>\n  <laranja class=\"pequeno\"/>\n  <laranja>\n</prato>\n<picles class=\"pequeno\"/>"
+    "boardMarkup": "\n<prato id=\"chique\">\n  <maca class=\"pequeno\"/>\n</prato>\n<prato/>\n<prato>\n  <laranja class=\"pequeno\"/>\n  <laranja>\n</prato>\n<picles class=\"pequeno\"/>"
   },
   {
     "selectorName": "Seletor Nth Child",
@@ -396,12 +396,12 @@ var levels = [
       "<strong>:nth-child(8)</strong> seleciona todos os elementos que são o 8º filho de outro elemento.",
       "<strong>div p:nth-child(2)</strong> seleciona o segundo <strong>p</strong> em todos os <strong>div</strong>."
     ],
-    "boardMarkup": "\n<prato/>\n<prato/>\n<prato/>\n<prato id=\"elegante\"/>\n"
+    "boardMarkup": "\n<prato/>\n<prato/>\n<prato/>\n<prato id=\"chique\"/>\n"
   },
   {
     "selectorName": "Seletor Nth Last Child",
     "helpTitle": "Selecione um elemento pela sua ordem em outro elemento, contando do final",
-    "doThis": "Selecione a 1º guardanapo",
+    "doThis": "Selecione o 1º guardanapo",
     "selector": "guardanapo:nth-last-child(3)",
     "syntax": ":nth-last-child(A)",
     "help": "Seleciona os filhos a partir do final do pai. É como o nth-child, mas contando do final!",
@@ -432,11 +432,11 @@ var levels = [
       "<strong>div:nth-of-type(2)</strong> seleciona a segunda instância de um div.",
       "<strong>.example:nth-of-type(odd)</strong> seleciona todas as instâncias ímpares da classe example."
     ],
-    "boardMarkup": "\n<prato/>\n<prato/>\n<prato/>\n<prato/>\n<prato id=\"elegante\"/>\n<prato/>\n"
+    "boardMarkup": "\n<prato/>\n<prato/>\n<prato/>\n<prato/>\n<prato id=\"chique\"/>\n<prato/>\n"
   },
   {
     "selectorName": "Nth-of-type Selector com Fórmula",
-    "doThis": "Selecione todo 2º prato, começando do 3º",
+    "doThis": "Selecione a partir do 3º prato, os pratos de dois em dois",
     "selector": "prato:nth-of-type(2n+3)",
     "syntax": ":nth-of-type(An+B)",
     "help": "A fórmula nth-of-type seleciona cada elemento nth, começando a contar de uma instância específica desse elemento.",
@@ -455,7 +455,7 @@ var levels = [
     "examples": [
       "<strong>p span:only-of-type</strong> seleciona um <tag>span</tag> dentro de qualquer <tag>p</tag> se for o único <tag>span</tag> ali."
     ],
-    "boardMarkup": "\n<prato id=\"elegante\">\n  <maca class=\"pequeno\"/>\n  <maca/>\n</prato>\n<prato>\n  <maca class=\"pequeno\"/>\n</prato>\n<prato>\n  <picles/>\n</prato>\n"
+    "boardMarkup": "\n<prato id=\"chique\">\n  <maca class=\"pequeno\"/>\n  <maca/>\n</prato>\n<prato>\n  <maca class=\"pequeno\"/>\n</prato>\n<prato>\n  <picles/>\n</prato>\n"
   },
   
   {
